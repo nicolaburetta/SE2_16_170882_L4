@@ -7,11 +7,11 @@
     <button type="button" >Search employee</button>
     <button type="button" >Delete employee</button>
     <br>
-    <button type="button" >Show/hide employee form</button>
+    <button type="button" onclick="changeFormVisible()" >Show/hide employee form</button>
     
     <br><br><br>
 
-    <form action="http://127.0.0.1:1337/" method='get'>
+    <form action="http://127.0.0.1:1337/" method='get' id="form" style="display:none">
       <table>
         <tr>
           <td>
@@ -60,5 +60,7 @@
       </p>
     </form>
     
+    
+    <script src="script.js"></script>
   </body>
 </html>
