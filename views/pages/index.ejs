@@ -6,12 +6,66 @@
   <body>
     <h1>Employees manager</h1>
     
-    <form id="form" method="get" action="/search">
+    <form id="form1" method="get" action="/SearchDelete">
       <p>
         Insert the ID:
         <input type="text" name="id">
-        <button type="submit" value="search" name="search">Search</button>
+        <button type="submit" value="search" name="action">Search</button>
+        <button type="submit" value="delete" name="action">Delete</button>
       </p>
     </form>
+    
+    <p>
+      <button type="button" onclick="showHideForm()">Show/Hide form</button>
+    </p>
+    
+    <form id="form2" style="display:<%= display ? display : 'none' %>" action="/AddUpdate" method="get" onsubmit="return checkFields()">
+      <table>
+        <tr>
+          <td>
+            ID:
+          </td>
+          <td>
+            <input type="text" id="empId" name="id" value="<%= emp.id ? emp.id : '' %>">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Name:
+          </td>
+          <td>
+            <input type="text" id="empName" name="name" value="<%= emp.name ? emp.name : '' %>">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Surname:
+          </td>
+          <td>
+            <input type="text" id="empSurname" name="surname" value="<%= emp.surname ? emp.surname : '' %>">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Level:
+          </td>
+          <td>
+            <input type="text" id="empLevel" name="level" value="<%= emp.level ? emp.level : '' %>">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Salary:
+          </td>
+          <td>
+            <input type="text" id="empSalary" name="salary" value="<%= emp.salary ? emp.salary : '' %>">
+          </td>
+        </tr>
+      </table>
+      <br>
+      <button type="submit">Add/Update employee</button>
+    </form>
+    
+    <script src="/script/script.js"></script>
   </body>
 </html>
